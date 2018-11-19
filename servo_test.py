@@ -3,8 +3,8 @@ import PCA9685 as servo
 import time                  # Import necessary modules
 
 
-MinPulse = 250
-MaxPulse = 550
+MinPulse = 250 # counter-clockwise max angle
+MaxPulse = 550 # clickwise max angle
 
 
 def setup():
@@ -27,8 +27,8 @@ def servo_reverse():
         #time.sleep(0.001)
 if __name__ == '__main__':
     #car_dir.turn(45)
-    #pwm.write(0, 0, MaxPulse) # This example is wrong example of pwm
-    #pwm.write(0, 0, MinPulse) # This example is wrong example of pwm
+    #pwm.write(0, 0, MaxPulse) # This example is wrong example of pwm because it gives one pulse
+    #pwm.write(0, 0, MinPulse) # This example is wrong example of pwm becuase it gives one pulse
     setup()
     servo_test()
     servo_reverse()
