@@ -4,8 +4,12 @@ End to end self driving for self driving rover
 ## 1. Gathering Data Phase
 1) Important points about hardware Mechanical & Circuit (Used Navio2 shield on rpi3)
 2) How to bind receiver and transmitter
-3) How to calibrate
-4) Trial and errors
+3) Mission Planner(UART Communication)
+4) Initial setup of Navio2
+5) How to calibrate
+6) ETC. Trial and errors
+<img src="hardware_img/navio2.jpg" width="40%">.
+
 
 ## 2. Training Phase
 1) Data Augmentation
