@@ -3,8 +3,8 @@ import PCA9685 as servo
 import time                  # Import necessary modules
 
 
-MinPulse = 250
-MaxPulse = 550
+MinPulse = 250 # counter-clockwise max angle
+MaxPulse = 550 # clickwise max angle
 
 
 def setup():
