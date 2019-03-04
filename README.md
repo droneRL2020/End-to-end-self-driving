@@ -8,7 +8,6 @@ End to end self driving for self driving rover
 4) Initial setup of Navio2
 5) How to calibrate
 6) ETC. Trial and errors
-<img src="hardware_img/navio2.jpg" width="40%">.
 
 
 ## 2. Training Phase
@@ -23,5 +22,14 @@ servo_test.py
 3) Explanation how to control 2 dc motors(pwm)
 motor.py 
 
-<img src="hardware_img/car_rpi3.jpg" width="40%">.
-<img src="hardware_img/car_rpi3_circuit.jpg" width="40%">.
+### Vending Machine
+<a href="https://imgflip.com/gif/2v62p0"><img src="https://i.imgflip.com/2v62p0.gif" title="made at imgflip.com"/></a>
+### Curve
+<a href="https://imgflip.com/gif/2v62y6"><img src="https://i.imgflip.com/2v62y6.gif" title="made at imgflip.com"/></a>
+### Avoid Person
+<a href="https://imgflip.com/gif/2v63dj"><img src="https://i.imgflip.com/2v63dj.gif" title="made at imgflip.com"/></a>
+### Unknown Obstacles(Cleaning tools data was not trained)
+<a href="https://imgflip.com/gif/2v63ok"><img src="https://i.imgflip.com/2v63ok.gif" title="made at imgflip.com"/></a>
+
+
+
