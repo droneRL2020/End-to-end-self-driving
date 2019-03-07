@@ -82,3 +82,6 @@ Optimized (https://arxiv.org/abs/1604.07316) this thesis into Raspberry Pi3
 2) Gather traffic light images to run and stop car by detecting traffic light sign. However, picamera images quality was too bad. Even with human-eye, it was impossible to distinguish between red light and green light.
 
 ## 5_Semantic Segmentation for more generalized driving
+1) Semantic Segmentation is done in this repository
+https://github.com/droneRL2020/Local_Indoor_Navigation
+2) Tx2 implementation will be uploaded at above repository.
