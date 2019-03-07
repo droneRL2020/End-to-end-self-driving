@@ -35,7 +35,7 @@ Optimized (https://arxiv.org/abs/1604.07316) this thesis into Raspberry Pi3
 3) "1_behavioral_cloning_test.py" - Checked performance with test(unseen) dataset before adapting model to real robot.
 
 ### Test
-1) "1_test.py" - Can check how to achieve 30 FPS on Raspberry Pi3 using dronekit API
+1) "1_test.py" - Can check how to achieve reactiveness of the car(30 FPS) on Raspberry Pi3 using PiCamera API
 
 ### Results
 #### Vending Machine
@@ -64,6 +64,18 @@ Optimized (https://arxiv.org/abs/1604.07316) this thesis into Raspberry Pi3
 #### Stop Car by Voice
 <a href="https://imgflip.com/gif/2vfm06"><img src="https://i.imgflip.com/2vfm06.gif" title="made at imgflip.com"/></a>
 
-## 4_Object Detection
+## 4_Object Detection(Road Crack, Person, Traffic Light)
+#### Check ssdlite_mobilenet_v2 can detected road crack on laptop screen first
+<a href="https://imgflip.com/gif/2vfpgs"><img src="https://i.imgflip.com/2vfpgs.gif" title="made at imgflip.com"/></a>
+#### Detected real road crack!!
+<a href="https://imgflip.com/gif/2vfpjy"><img src="https://i.imgflip.com/2vfpjy.gif" title="made at imgflip.com"/></a>
+
+### Mapping Road Crack Coordinates on Real Map
+1) "4_crack_detection.py" - This script runs "capture_geo.py" which outputs txt file and html map like below
+#### Real Crack Detected in front of My House(52nd Street)
+<a href="https://imgflip.com/gif/2vfpq6"><img src="https://i.imgflip.com/2vfpq6.gif" title="made at imgflip.com"/></a>
+#### coord.txt
+<a href="https://imgflip.com/gif/2vfpxr"><img src="https://i.imgflip.com/2vfpxr.gif" title="made at imgflip.com"/></a>
+
 
 ## 5_Semantic Segmentation for more generalized driving
