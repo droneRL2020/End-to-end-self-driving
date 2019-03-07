@@ -65,17 +65,20 @@ Optimized (https://arxiv.org/abs/1604.07316) this thesis into Raspberry Pi3
 <a href="https://imgflip.com/gif/2vfm06"><img src="https://i.imgflip.com/2vfm06.gif" title="made at imgflip.com"/></a>
 
 ## 4_Object Detection(Road Crack, Person, Traffic Light)
-#### Check ssdlite_mobilenet_v2 can detected road crack on laptop screen first
+### Road Crack - Check ssdlite_mobilenet_v2 can detected road crack on laptop screen first
 <a href="https://imgflip.com/gif/2vfpgs"><img src="https://i.imgflip.com/2vfpgs.gif" title="made at imgflip.com"/></a>
-#### Detected real road crack!!
-<a href="https://imgflip.com/gif/2vfpjy"><img src="https://i.imgflip.com/2vfpjy.gif" title="made at imgflip.com"/></a>
 
 ### Mapping Road Crack Coordinates on Real Map
 1) "4_crack_detection.py" - This script runs "capture_geo.py" which outputs txt file and html map like below
+#### Detected real road crack!!
+<a href="https://imgflip.com/gif/2vfpjy"><img src="https://i.imgflip.com/2vfpjy.gif" title="made at imgflip.com"/></a>
 #### Real Crack Detected in front of My House(52nd Street)
 <a href="https://imgflip.com/gif/2vfpq6"><img src="https://i.imgflip.com/2vfpq6.gif" title="made at imgflip.com"/></a>
 #### coord.txt
 <a href="https://imgflip.com/gif/2vfpxr"><img src="https://i.imgflip.com/2vfpxr.gif" title="made at imgflip.com"/></a>
 
+### Overall problems
+1) Raspberry pi3 has low processing power which gives 1 FPS for every object detection
+2) Gather traffic light images to run and stop car by detecting traffic light sign. However, picamera images quality was too bad. Even with human-eye, it was impossible to distinguish between red light and green light.
 
 ## 5_Semantic Segmentation for more generalized driving
