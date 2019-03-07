@@ -27,8 +27,6 @@ image_test = tf.image.resize_images(image_test, [64, 64])
 test_x_batch, test_y_batch = \
     tf.train.batch([image_test, label_test], batch_size=100)
 
-
-
 learning_rate = 0.0001
 batch_size = 100
 num_classes = 1
@@ -36,12 +34,8 @@ num_batch = 290 // batch_size
 
 
 X_ph = tf.placeholder(tf.float32, [None, 64, 64, 3])    
-# X_ph = tf.placeholder(tf.float32, [batch_size, 160, 320, 3])
-# X_grey = tf.image.rgb_to_grayscale(X_ph)
-# X_img_resized = tf.image.resize_bilinear(X_grey, [224, 224], align_corners=True)
 Y_ph = tf.placeholder(tf.float32, [None, num_classes])
 
-# hypothesis, probs, _ = mc.mobilenet(X_ph, 1)
 hypothesis, probs, _ = bc.binarynet(X_ph, 1)
 print("hello wrold")
 cost = tf.reduce_mean(tf.square(hypothesis - Y_ph))
@@ -62,8 +56,6 @@ threads = tf.train.start_queue_runners(sess=sess, coord=coord)
 
 restore_vars = [var for var in tf.global_variables() if
                var.name.startswith('binary_classifier')]
-# restore_vars = [var for var in tf.global_variables() if
-#                var.name.startswith('binary_classifier')]
 saver = tf.train.Saver(restore_vars)
 saver.restore(sess, "saved_networks/2018-11-18_16_11")
 
@@ -71,9 +63,6 @@ x_batch, y_batch = sess.run([test_x_batch, test_y_batch]) # Since, we can't feed
 
 hy_val = sess.run([hypothesis], feed_dict={X_ph: x_batch})
 print("prediction:", hy_val, "label:", y_batch)
-
-
-
 
 print("Learning Done!")
 coord.request_stop()
