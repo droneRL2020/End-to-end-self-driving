@@ -1,18 +1,24 @@
-# ** Currently Updating Works
-
 # End-to-end-self-driving
-End to end self driving for self driving rover
+## 6 Experiments - End to end self driving for self driving rover
+#### 0_Important Preps(Done)
+#### 1_Behavioral Cloning with only camera(Done)
+#### 2_Behavioral Cloning(Camera) + Ultrasonic Sensor(Done)
+#### 3_User Interface(Done)
+#### 4_Object Detection(Ongoing tx2 with better camera implementation)
+#### 5_Semantic Segmentation for more generalized driving(Ongoing tx2 implementation)
 
 ## 0. Important Preps Before Gathering Data
 1) Stabilize hardware especially actuators(Servo, DC Motor) and sensors(Camera, Ultrasonic Sensor)
-2) Real-time WebRTC
-- Follow "0_real_time_webRTC_Rpi3_tutorial.txt"
+2) Real-time WebRTC - "0_real_time_webRTC_Rpi3_tutorial.txt"
 - Before mounting camera, I manually drove car mounting camera in different positions.
 - If person can drive easily, it is easier for behavioral cloning(Deep Learning) to learn self-drive.
 <a href="https://imgflip.com/gif/2vfl6v"><img src="https://i.imgflip.com/2vfl6v.gif" title="made at imgflip.com"/></a>
+3) Find Minimum, Center, Maximum PWM Values for Servo - "0_servo_test.py"
+- Minimum:Center:Maximum -> -1:0:1 (Normalization)
 
 
-## 1. Gathering Data Phase
+## 1. Behavioral Cloning
+### Gathering Data
 1) Important points about hardware Mechanical & Circuit (Used Navio2 shield on rpi3)
 2) How to bind receiver and transmitter
 3) Mission Planner(UART Communication)
@@ -20,13 +26,12 @@ End to end self driving for self driving rover
 5) How to calibrate
 6) ETC. Trial and errors
 
-
-## 2. Training Phase
+### Training and Validation
 1) Data Augmentation
 2) Model
 3) Important points when training
 
-## 3. Testing Phase
+### Test
 1) Important points about hardware Mechanical & Circuit (Used rpi3 only)
 2) Explanation how to control servo motor(pwm)
 servo_test.py
