@@ -3,6 +3,15 @@
 # End-to-end-self-driving
 End to end self driving for self driving rover
 
+## 0. Important Preps Before Gathering Data
+1) Stabilize hardware especially actuators(Servo, DC Motor) and sensors(Camera, Ultrasonic Sensor)
+2) Real-time WebRTC
+- Follow "0_real_time_webRTC_Rpi3_tutorial.txt"
+- Before mounting camera, I manually drove car mounting camera in different positions.
+- If person can drive easily, it is easier for behavioral cloning(Deep Learning) to learn self-drive.
+<a href="https://imgflip.com/gif/2vfl6v"><img src="https://i.imgflip.com/2vfl6v.gif" title="made at imgflip.com"/></a>
+
+
 ## 1. Gathering Data Phase
 1) Important points about hardware Mechanical & Circuit (Used Navio2 shield on rpi3)
 2) How to bind receiver and transmitter
@@ -32,6 +41,9 @@ motor.py
 <a href="https://imgflip.com/gif/2v63dj"><img src="https://i.imgflip.com/2v63dj.gif" title="made at imgflip.com"/></a>
 ### Unknown Obstacles(Cleaning tools data was not trained)
 <a href="https://imgflip.com/gif/2v63ok"><img src="https://i.imgflip.com/2v63ok.gif" title="made at imgflip.com"/></a>
+
+## 4. Run and Stop User Interface
+<a href="https://imgflip.com/gif/2vflr1"><img src="https://i.imgflip.com/2vflr1.gif" title="made at imgflip.com"/></a>
 
 
 
