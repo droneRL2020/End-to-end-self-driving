@@ -1,0 +1,25 @@
+[This is for stretch, if you are using other version raspbian
+refer to this webpage]
+https://www.linux-projects.org/uv4l/installation/
+
+
+curl http://www.linux-projects.org/listing/uv4l_repo/lpkey.asc | sudo apt-key add -
+
+sudo  nano /etc/apt/sources.list 
+
+deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/stretch stretch main
+
+sudo apt-get update
+
+sudo apt-get install uv4l uv4l-raspicam
+
+sudo rpi-update
+
+sudo apt-get install uv4l-webrtc
+
+[How to run]
+uv4l --driver raspicam --auto-video_nr --width 640 --height 480 --encoding h264
+
+
+[How to Kill]
+sudo pkill uv4l
