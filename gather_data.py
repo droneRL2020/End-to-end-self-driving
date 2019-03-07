@@ -1,3 +1,9 @@
+'''
+1. Gathered data at 10 FPS in order to gather various data.
+2. This script is for raspberry pi3 with navio2 shield.
+3. Used pi-camera mounted on raspberry pi3
+'''
+
 from __future__ import print_function
 import io
 import time
@@ -44,7 +50,7 @@ def outputs():
 
 with picamera.PiCamera() as camera:
     camera.resolution = (128, 128)
-    camera.framerate = 10
+    camera.framerate = 10   
     time.sleep(2)
     start1 = time.time()
     camera.capture_sequence(outputs(), 'jpeg', use_video_port=True)
