@@ -1,13 +1,15 @@
 # End-to-end-self-driving
+Optimized (https://arxiv.org/abs/1604.07316) this thesis into Raspberry Pi3
+
 ## 6 Experiments - End to end self driving for self driving rover
 #### 0_Important Preps(Done)
 #### 1_Behavioral Cloning with only camera(Done)
 #### 2_Behavioral Cloning(Camera) + Ultrasonic Sensor(Done)
 #### 3_User Interface(Done)
-#### 4_Object Detection(Ongoing tx2 with better camera implementation)
-#### 5_Semantic Segmentation for more generalized driving(Ongoing tx2 implementation)
+#### 4_Object Detection(SW Done -> Tx2 Implementation Ongoing)
+#### 5_Semantic Segmentation for more generalized driving(SW Done -> Tx2 Implementation Ongoing)
 
-## 0. Important Preps Before Gathering Data
+## 0_Important Preps
 1) Stabilize hardware especially actuators(Servo, DC Motor) and sensors(Camera, Ultrasonic Sensor)
 2) Real-time WebRTC - "0_real_time_webRTC_Rpi3_tutorial.txt"
 - Before mounting camera, I manually drove car mounting camera in different positions.
@@ -17,39 +19,51 @@
 - Minimum:Center:Maximum -> -1:0:1 (Normalization)
 
 
-## 1. Behavioral Cloning
-### Gathering Data
-1) Important points about hardware Mechanical & Circuit (Used Navio2 shield on rpi3)
-2) How to bind receiver and transmitter
-3) Mission Planner(UART Communication)
-4) Initial setup of Navio2
-5) How to calibrate
-6) ETC. Trial and errors
+## 1_Behavioral Cloning with only camera
+### Gathering Data and Importance of Data Augmentation(Non-Markovian, Multimodel)
+1) Behavioral cloning cannot fit to expert's behavioral because of Non-Markovian and Multimodel problem.
+2) After gathering 60,000 images & PWM values, I augmented data using Jitter and Horizontal Shift to minimize upper problem.
+3) Other important points
+- Used Navio2 shield on rpi3 and gathered data at 10 FPS not to have too similar data
+- Balance dataset
+- Crop upper part to simplify image
+- Always normalize(both image & PWM)
 
 ### Training and Validation
-1) Data Augmentation
-2) Model
-3) Important points when training
+1) "binarynet_classifier.py" - Binary classification doesn't need heavy model. I used the same script when I did binary classifiaction.
+2) "1_behavioral_cloning_training.ipynb" - GPU-optimized(Tensorflow) way data input pipeline helps me to escape from memory issue.
+3) "1_behavioral_cloning_test.py" - Checked performance with test(unseen) dataset before adapting model to real robot.
 
 ### Test
-1) Important points about hardware Mechanical & Circuit (Used rpi3 only)
-2) Explanation how to control servo motor(pwm)
-servo_test.py
-3) Explanation how to control 2 dc motors(pwm)
-motor.py 
+1) "1_test.py" - Can check how to achieve 30 FPS on Raspberry Pi3 using dronekit API
 
-### Vending Machine
+### Results
+#### Vending Machine
 <a href="https://imgflip.com/gif/2v62p0"><img src="https://i.imgflip.com/2v62p0.gif" title="made at imgflip.com"/></a>
-### Curve
+#### Curve
 <a href="https://imgflip.com/gif/2v62y6"><img src="https://i.imgflip.com/2v62y6.gif" title="made at imgflip.com"/></a>
-### Avoid Person
+#### Avoid Person
 <a href="https://imgflip.com/gif/2v63dj"><img src="https://i.imgflip.com/2v63dj.gif" title="made at imgflip.com"/></a>
-### Unknown Obstacles(Cleaning tools data was not trained)
+#### Unknown Obstacles(Cleaning tools data was not trained)
 <a href="https://imgflip.com/gif/2v63ok"><img src="https://i.imgflip.com/2v63ok.gif" title="made at imgflip.com"/></a>
 
-## 4. Run and Stop User Interface
-### Run Car by Voice
+## 2_Behavioral Cloning(Camera) + Ultrasonic Sensor
+### Why Ultrasonic Sensor?
+1) Behavioral Cloning could turn corner but couldn't distinguish which corner to turn
+#### Shouldn't Turn in This Corner
+<a href="https://imgflip.com/gif/2vfne5"><img src="https://i.imgflip.com/2vfne5.gif" title="made at imgflip.com"/></a>
+### Limitation of Ultrasonic Sensors(Performance is better when using Behavioral Cloning alone)
+1) Doesn't output correct distance, when rover's orientation is not parellel to wall
+2) Doesn't output infinite value, even when there is nothing within ultrasonic's maximum detection range.
+3) Diffuses on the rough surface
+4) Lagging issue after ultrasonic outputs infinite value
+
+## 3_User Interface
+#### Run Car by Voice
 <a href="https://imgflip.com/gif/2vflym"><img src="https://i.imgflip.com/2vflym.gif" title="made at imgflip.com"/></a>
-### Stop Car by Voice
+#### Stop Car by Voice
 <a href="https://imgflip.com/gif/2vfm06"><img src="https://i.imgflip.com/2vfm06.gif" title="made at imgflip.com"/></a>
 
+## 4_Object Detection
+
+## 5_Semantic Segmentation for more generalized driving
