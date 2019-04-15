@@ -1,5 +1,6 @@
 # End-to-end-self-driving
-Optimized (https://arxiv.org/abs/1604.07316) this thesis into Raspberry Pi3
+Optimized (https://arxiv.org/abs/1604.07316) this thesis into Raspberry Pi3.
+This project was done with Sarjak Thakkar.
 
 ## 6 Experiments - End to end self driving for self driving rover
 #### 0_Important Preps(Done)
